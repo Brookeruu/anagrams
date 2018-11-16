@@ -12,7 +12,7 @@ class Anagram
     letters_only = letters_only.gsub!(/[^A-Za-z]/, '')
     letters_only = letters_only.split()
     letters_only = letters_only.join()
-    
+
   end
 
   def sort_and_join(word)
@@ -22,7 +22,11 @@ class Anagram
   end
 
   def has_vowels(word)
-    # check for vowels
+    letters_only = word
+    has_vowel = letters_only.include?('/[aeiouy/]')
+      if has_vowles == false
+        puts "Your word must contain a vowel!"
+      end
   end
 
   def find_anagram
