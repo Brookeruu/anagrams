@@ -16,14 +16,14 @@ class Anagram
   end
 
   def sort_and_join(word)
-    letters_only = word
-    letters_only = letters_only.sort()
-    letters_only = letters_only.join()
+    letters_order = word
+    letters_order = letters_order.sort()
+    letters_order = letters_order.join()
   end
 
-  def has_vowel(word)
-    letters_only = word
-    has_vowel = letters_only.include?('/[aeiouy]/')
+  def check_vowel(word)
+    letters_only = word.split("")
+    has_vowel = letters_only.include?(/[aeiouy]/)
       if has_vowel == false
         puts "Your word must contain a vowel!"
         return false
