@@ -1,10 +1,10 @@
-require 'rspec'
-require 'pry'
-require 'anagrams'
+require ('rspec')
+require ('pry')
+require ('anagrams')
 
 describe('#anagrams') do
-  it('should receive a word and return the word all non-letter characters removed') do
-      word = Anagram.new('*wor-ds%')
-    expect(anagram_finder("*wor-ds%")).to(eq.("words"))
+  it('should receive a word and return the word with all non-letter characters removed') do
+      word1 = Anagram.new("*wor-ds%")
+    expect(word1.anagram_finder()).to(eq("[words]"))
   end
 end
