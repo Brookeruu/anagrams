@@ -7,10 +7,16 @@ class Anagram
     @matching_letters = []
   end
 
-  def remove_specials_sort(word)
+  def remove_specials(word)
     letters_only = word
     letters_only = letters_only.gsub!(/[^A-Za-z]/, '')
     letters_only = letters_only.split()
+    letters_only = letters_only.join()
+    
+  end
+
+  def sort_and_join(word)
+    letters_only = word
     letters_only = letters_only.sort()
     letters_only = letters_only.join()
   end
