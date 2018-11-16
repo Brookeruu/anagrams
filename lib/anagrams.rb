@@ -21,11 +21,12 @@ class Anagram
     letters_only = letters_only.join()
   end
 
-  def has_vowels(word)
+  def has_vowel(word)
     letters_only = word
-    has_vowel = letters_only.include?('/[aeiouy/]')
-      if has_vowles == false
+    has_vowel = letters_only.include?('/[aeiouy]/')
+      if has_vowel == false
         puts "Your word must contain a vowel!"
+        return false
       end
   end
 

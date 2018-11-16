@@ -16,7 +16,7 @@ describe('#anagrams') do
 
   it('should return false if the word does not contain a vowel') do
       anagram3 = Anagram.new("word1", "word2")
-    expect(anagram3.has_vowel(["w", "w", "r", "d", "s"])).to(eq(False))
+    expect(anagram3.has_vowel(["w", "w", "r", "d", "s"])).to(eq(false))
   end
 
 end
