@@ -7,11 +7,11 @@ class Anagram
   end
 
   def anagram_finder
-  #   letters_only = word
-  # end
-    letters_only = *(word)
-    letters_only.delete_if {|a| a == "/\W/"}
-    # letters_only.to_s
+    letters_only = @word
+
+    letters_only = letters_only.gsub!(/[^A-Za-z]/, '')
+
     return letters_only
   end
+# end
 end
