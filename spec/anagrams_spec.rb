@@ -5,7 +5,7 @@ require 'anagrams'
 
 describe('#anagrams') do
   it('should receive a word and return the word with all non-letter characters removed') do
-      word1 = Anagram.new("*wor-ds%")
-    expect(word1.anagram_finder()).to(eq("words"))
+      anagram1 = Anagram.new("word1", "word2")
+    expect(anagram1.remove_specials_sort("w#or-ds!@")).to(eq("words"))
   end
 end
