@@ -9,6 +9,11 @@ describe('#anagrams') do
     expect(anagram1.remove_special_chars("w#or-ds!@")).to(eq("dorsw"))
   end
 
+  it('remove special characters, sort, and downcase all letters') do
+      anagram2 = Anagram.new("word1", "word2")
+    expect(anagram2.remove_special_chars("w#oR-dS!@")).to(eq("dorsw"))
+  end
+
   it('should return false if the word does not contain a vowel') do
       anagram3 = Anagram.new("word1", "word2")
     expect(anagram3.check_vowel("words")).to(eq(true))
