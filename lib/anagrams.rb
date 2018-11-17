@@ -10,21 +10,17 @@ class Anagram
   def remove_specials(word)
     letters_only = word
     letters_only = letters_only.gsub!(/[^A-Za-z]/, '')
-    letters_only = letters_only.split()
+    letters_only = letters_only.split('')
+    letters_only = letters_only.sort()
     letters_only = letters_only.join()
-
   end
 
-  def sort_and_join(word)
-    letters_order = word
-    letters_order = letters_order.sort()
-    letters_order = letters_order.join()
-  end
 
   def check_vowel(word)
     letters_only = word.scan(/[aeiou]/)
     if letters_only.empty?
       return false
+      puts "Word must contain a vowel!"
     else
       return true
     end
