@@ -22,13 +22,17 @@ class Anagram
   end
 
   def check_vowel(word)
-    letters_only = word.split("")
-    has_vowel = letters_only.include?(/[aeiouy]/)
-      if has_vowel == false
-        puts "Your word must contain a vowel!"
-        return false
-      end
+    letters_only = word.scan(/[aeiou]/)
+    if letters_only.empty?
+      return false
+    else
+      return true
+    end
   end
+      # if letters_only == false
+      #   puts "Your word must contain a vowel!"
+      #   return false
+      # end
 
   def find_anagram
     sorted1 = remove_specials_sort(@word1)
