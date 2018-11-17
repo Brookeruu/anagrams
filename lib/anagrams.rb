@@ -7,7 +7,7 @@ class Anagram
     @matching_letters = []
   end
 
-  def remove_specials(word)
+  def remove_special_chars(word)
     letters_only = word
     letters_only = letters_only.gsub!(/[^A-Za-z]/, '')
     letters_only = letters_only.split('')
@@ -17,10 +17,10 @@ class Anagram
 
 
   def check_vowel(word)
-    letters_only = word.scan(/[aeiou]/)
-    if letters_only.empty?
-      return false
+    has_vowels = word.scan(/[aeiou]/)
+    if has_vowels.empty?
       puts "Word must contain a vowel!"
+      return false
     else
       return true
     end
@@ -36,6 +36,11 @@ class Anagram
     # if both have vowels then they are words
     # if sorted1 and sorted1 are words then compare to see if strings are equal
     #   if strings are equal, they are anagrams
+
+  end
+
+  def length_word
+
 
   end
 
