@@ -24,5 +24,10 @@ describe('#anagrams') do
     expect(anagram4.check_vowel("")).to(eq(false))
   end
 
+  it('should return a phrase if the either word do not contain a vowel') do
+      anagram5 = Anagram.new("word1$", "wrrd2@")
+    expect(anagram5.find_anagram()).to(eq("Both words much contain a vowel"))
+  end
+
 
 end
