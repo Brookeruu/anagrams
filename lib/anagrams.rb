@@ -38,6 +38,7 @@ class Anagram
 
     if vowel_check1 == false || vowel_check2 == false
       return "Both words much contain a vowel"
+    else return "Now check letters"
     end
     # if both have vowels then they are words
     # if sorted1 and sorted1 are words then compare to see if strings are equal
