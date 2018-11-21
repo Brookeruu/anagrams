@@ -1,7 +1,6 @@
 require 'rspec'
 require 'pry'
 require 'anagrams'
-# include Anagram
 
 describe('#anagrams') do
   it('should receive a word and return the word inalphabetical order with all non-letter characters removed') do
@@ -29,12 +28,12 @@ describe('#anagrams') do
     expect(anagram6.find_anagram()).to(eq("Both words must contain a vowel"))
   end
 
-  it('should return a NEW array with common letters from both words, but not be anagrams') do
+  it('should return a NEW array with matching letters from both words, but not be anagrams') do
     anagram11 = Anagram.new("gator", "dog")
     expect(anagram11.find_anagram()).to(eq(["g", "o"]))
   end
 
-  it('should return a NEW array with common letters from both words, but not be anagrams (add special chars to test)') do
+  it('should return a NEW array with matching letters from both words, but not be anagrams (add special chars to test)') do
     anagram11 = Anagram.new("$bo ok!shelf", "folklo$&^re")
     expect(anagram11.find_anagram()).to(eq(["e", "f", "k", "l", "o"]))
   end
@@ -54,7 +53,7 @@ describe('#anagrams') do
     expect(anagram11.find_anagram()).to(eq("Words are anagrams!"))
   end
 
-  it('should return matching letters of words that are not anagrams, but have same letter length') do
+  it('should return a NEW array with matching letters of words that are not anagrams, but have same letter length') do
     anagram11 = Anagram.new("EnraGE", "daNgEr")
     expect(anagram11.find_anagram()).to(eq(["a", "e", "g", "n", "r"]))
   end
