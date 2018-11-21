@@ -4,7 +4,7 @@ class Anagram
   def initialize(word1, word2)
     @word1 = word1
     @word2 = word2
-    @matching_letters = []
+    # @matching_letters = []
   end
 
   def remove_special_chars(word)
@@ -15,7 +15,6 @@ class Anagram
     letters_only = letters_only.sort()
     letters_only = letters_only.join()
   end
-
 
   def check_vowel(word)
     has_vowels = word.scan(/[aeiou]/)
@@ -45,43 +44,14 @@ class Anagram
         if matching.length == sorted1_array.length && matching.length == sorted2_array.length
           return "Words are anagrams!"
         end
-      
-        # sorted1_array.each do |letter1|
-        #   sorted2_array.each do |letter2|
-        #     if (letter1 == letter2)
-        #       empty.push(letter1)
-        #       return empty
-        #     end
-        #   end
-        # end
-
-
-
-        # return "lengths are equal"
       else matching = sorted1_array & sorted2_array
-      return matching
+        if matching == []
+          return "Words are antigrams!"
+        else
+          return matching
+        end
       end
     end
   end
 
-  end
-#
-#   def length_word
-#
-#
-#   end
-#
-#   def output
-#     "words"
-#   end
-# end
-
-# else return sorted1.split('').length
-# end
-
-# elsif sorted1.split('').length != sorted2.split('').length
-# return "words are different lengths"
-# end
-
-# if sorted1 and sorted1 are words then compare to see if strings are equal
-#   if strings are equal, they are anagrams
+end
