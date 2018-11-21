@@ -39,10 +39,10 @@ describe('#anagrams') do
   #   expect(anagram7.find_anagram()).to(eq("lengths are equal"))
   # end
 
-  it('should return a phrase if the length of the words are not equal') do
-      anagram8 = Anagram.new("word!", "words*")
-    expect(anagram8.find_anagram()).to(eq("length of words is not equal, therefore not anagrams!"))
-  end
+  # it('should return a phrase if the length of the words are not equal') do
+  #     anagram8 = Anagram.new("word!", "words*")
+  #   expect(anagram8.find_anagram()).to(eq("length of words is not equal, therefore not anagrams!"))
+  # end
 
   it('should return an array matching letters from both words') do
       anagram9 = Anagram.new("words!", "sword#4")
@@ -50,8 +50,18 @@ describe('#anagrams') do
   end
 
   it('should return a NEW array matching letters from both words') do
-      anagram11 = Anagram.new("words", "sword")
-    expect(anagram11.find_anagram()).to(eq(["d", "o", "r", "s", "w"]))
+      anagram10 = Anagram.new("words", "sword")
+    expect(anagram10.find_anagram()).to(eq(["d", "o", "r", "s", "w"]))
+  end
+
+  it('should return a NEW array with common letters from both words, but not be anagrams') do
+      anagram11 = Anagram.new("gator", "dog")
+    expect(anagram11.find_anagram()).to(eq(["g", "o"]))
+  end
+
+  it('should return a NEW array with common letters from both words, but not be anagrams (add special chars to test)') do
+      anagram11 = Anagram.new("$bo ok!shelf", "folklo$&^re")
+    expect(anagram11.find_anagram()).to(eq(["e", "f", "k", "l", "o"]))
   end
 
 

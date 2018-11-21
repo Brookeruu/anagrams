@@ -41,9 +41,11 @@ class Anagram
     end
     if vowel_check1 == true || vowel_check2 == true
       if sorted1_array.length == sorted2_array.length
-        array3 = sorted1_array & sorted2_array
-        return array3
-
+        matching = sorted1_array & sorted2_array
+        if matching.length == sorted1_array.length && matching.length == sorted2_array.length
+          return "Words are anagrams!"
+        end
+      
         # sorted1_array.each do |letter1|
         #   sorted2_array.each do |letter2|
         #     if (letter1 == letter2)
@@ -56,7 +58,8 @@ class Anagram
 
 
         # return "lengths are equal"
-      else return "length of words is not equal, therefore not anagrams!"
+      else matching = sorted1_array & sorted2_array
+      return matching
       end
     end
   end
