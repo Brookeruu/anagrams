@@ -49,6 +49,10 @@ describe('#anagrams') do
     expect(anagram9.find_anagram()).to(eq(["d", "o", "r", "s", "w"]))
   end
 
+  it('should return a NEW array matching letters from both words') do
+      anagram11 = Anagram.new("words", "sword")
+    expect(anagram11.find_anagram()).to(eq(["d", "o", "r", "s", "w"]))
+  end
 
 
 end

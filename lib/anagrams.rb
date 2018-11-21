@@ -9,7 +9,8 @@ class Anagram
 
   def remove_special_chars(word)
     letters_only = word.downcase()
-    letters_only = letters_only.gsub!(/[^A-Za-z]/, '')
+    if letters_only.gsub!(/[^A-Za-z]/, '') != nil
+    end
     letters_only = letters_only.split('')
     letters_only = letters_only.sort()
     letters_only = letters_only.join()
