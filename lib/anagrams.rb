@@ -25,10 +25,6 @@ class Anagram
       return true
     end
   end
-      # if letters_only == false
-      #   puts "Your word must contain a vowel!"
-      #   return false
-      # end
 
   def find_anagram
     sorted1 = remove_special_chars(@word1)
@@ -38,9 +34,13 @@ class Anagram
 
     if vowel_check1 == false || vowel_check2 == false
       return "Both words much contain a vowel"
-    else return "Now check letters"
+    else return sorted1.split('').length
     end
-    # if both have vowels then they are words
+
+  # elsif sorted1.split('').length != sorted2.split('').length
+  # return "words are different lengths"
+  # end
+
     # if sorted1 and sorted1 are words then compare to see if strings are equal
     #   if strings are equal, they are anagrams
 

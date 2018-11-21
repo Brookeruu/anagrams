@@ -29,10 +29,21 @@ describe('#anagrams') do
     expect(anagram5.find_anagram()).to(eq("Both words much contain a vowel"))
   end
 
+  # it('should return a phrase if the either word do not contain a vowel') do
+  #     anagram6 = Anagram.new("word1$", "Thes3#e")
+  #   expect(anagram6.find_anagram()).to(eq("Now check letters"))
+  # end
+
   it('should return a phrase if the either word do not contain a vowel') do
       anagram6 = Anagram.new("word1$", "Thes3#e")
-    expect(anagram6.find_anagram()).to(eq("Now check letters"))
+    expect(anagram6.find_anagram()).to(eq(4))
   end
+
+  # it('should return a phrase if the either word do not contain a vowel') do
+  #     anagram6 = Anagram.new("word1$", "words")
+  #   expect(anagram6.find_anagram()).to(eq("words are different lengths"))
+  # end
+
 
 
 end
