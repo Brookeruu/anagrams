@@ -43,6 +43,8 @@ class Anagram
         matching = sorted1_array & sorted2_array
         if matching.length == sorted1_array.length && matching.length == sorted2_array.length
           return "Words are anagrams!"
+        else
+          return matching
         end
       else matching = sorted1_array & sorted2_array
         if matching == []

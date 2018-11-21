@@ -25,18 +25,8 @@ describe('#anagrams') do
   end
 
   it('should return a phrase if the either word do not contain a vowel') do
-    anagram5 = Anagram.new("word1$", "wrrd2@")
-    expect(anagram5.find_anagram()).to(eq("Both words must contain a vowel"))
-  end
-
-  it('should return a phrase if the either word do not contain a vowel') do
     anagram6 = Anagram.new("word1$", "Thss3#")
     expect(anagram6.find_anagram()).to(eq("Both words must contain a vowel"))
-  end
-
-  it('should return a NEW array matching letters from both words') do
-    anagram10 = Anagram.new("words", "sword")
-    expect(anagram10.find_anagram()).to(eq("Words are anagrams!"))
   end
 
   it('should return a NEW array with common letters from both words, but not be anagrams') do
@@ -54,10 +44,24 @@ describe('#anagrams') do
     expect(anagram11.find_anagram()).to(eq("Words are antigrams!"))
   end
 
-  it('should return a phrase if words are anagrams (danger & garden)') do
+  it('should return a phrase if words despite special characters are anagrams') do
     anagram11 = Anagram.new("D$a %ngE!r", "gA$%r^d)En")
     expect(anagram11.find_anagram()).to(eq("Words are anagrams!"))
   end
 
+  it('should return a phrase for anagrams') do
+    anagram11 = Anagram.new("DaNgER", "gArdeN")
+    expect(anagram11.find_anagram()).to(eq("Words are anagrams!"))
+  end
+
+  it('should return matching letters of words that are not anagrams, but have same letter length') do
+    anagram11 = Anagram.new("EnraGE", "daNgEr")
+    expect(anagram11.find_anagram()).to(eq(["a", "e", "g", "n", "r"]))
+  end
+
+  it('should return matching letters of words that are not anagrams, but have same letter length') do
+    anagram11 = Anagram.new("EnraGE", "daNgEr")
+    expect(anagram11.find_anagram()).to(eq(["a", "e", "g", "n", "r"]))
+  end
 
 end
