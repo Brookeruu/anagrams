@@ -28,14 +28,9 @@ describe('#anagrams') do
     expect(anagram6.find_anagram()).to(eq("Both words must contain a vowel"))
   end
 
-  it('should return a NEW array with matching letters from both words, but not be anagrams') do
-    anagram11 = Anagram.new("gator", "dog")
-    expect(anagram11.find_anagram()).to(eq(["g", "o"]))
-  end
-
   it('should return a NEW array with matching letters from both words, but not be anagrams (add special chars to test)') do
     anagram11 = Anagram.new("$bo ok!shelf", "folklo$&^re")
-    expect(anagram11.find_anagram()).to(eq(["e", "f", "k", "l", "o"]))
+    expect(anagram11.find_anagram()).to(eq("These are not anagrams, but have matching letters: e f k l o"))
   end
 
   it('should return a phrase if there are no matching letters') do
@@ -53,14 +48,15 @@ describe('#anagrams') do
     expect(anagram11.find_anagram()).to(eq("Words are anagrams!"))
   end
 
-  it('should return a NEW array with matching letters of words that are not anagrams, but have same letter length') do
+  it('should return matching letters of words that are not anagrams, but have same letter length') do
     anagram11 = Anagram.new("EnraGE", "daNgEr")
-    expect(anagram11.find_anagram()).to(eq(["a", "e", "g", "n", "r"]))
+    expect(anagram11.find_anagram()).to(eq("These are not anagrams, but have matching letters: a e g n r"))
   end
 
   it('should return matching letters of words that are not anagrams, but have same letter length') do
-    anagram11 = Anagram.new("EnraGE", "daNgEr")
-    expect(anagram11.find_anagram()).to(eq(["a", "e", "g", "n", "r"]))
+    anagram11 = Anagram.new("alligator", "hotdog")
+    expect(anagram11.find_anagram()).to(eq("These are not anagrams, but have matching letters: g o t"))
   end
+
 
 end

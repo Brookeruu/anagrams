@@ -26,7 +26,6 @@ class Anagram
   end
 
   def find_anagram
-    empty = []
     sorted1 = remove_special_chars(@word1)
     sorted2 = remove_special_chars(@word2)
     vowel_check1 = check_vowel(sorted1)
@@ -37,19 +36,19 @@ class Anagram
     if vowel_check1 == false || vowel_check2 == false
       return "Both words must contain a vowel"
     end
-    if vowel_check1 == true || vowel_check2 == true
+    if vowel_check1 == true && vowel_check2 == true
       if sorted1_array.length == sorted2_array.length
         matching = sorted1_array & sorted2_array
         if matching.length == sorted1_array.length && matching.length == sorted2_array.length
           return "Words are anagrams!"
         else
-          return matching
+          return "These are not anagrams, but have matching letters: " + matching.join(' ')
         end
       else matching = sorted1_array & sorted2_array
         if matching == []
           return "Words are antigrams!"
         else
-          return matching
+          return "These are not anagrams, but have matching letters: " + matching.join(' ')
         end
       end
     end
