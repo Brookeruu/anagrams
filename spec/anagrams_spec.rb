@@ -34,14 +34,19 @@ describe('#anagrams') do
     expect(anagram6.find_anagram()).to(eq("Both words must contain a vowel"))
   end
 
-  it('should return a phrase if the length of the words are equal') do
-      anagram7 = Anagram.new("word1$", "This3#@")
-    expect(anagram7.find_anagram()).to(eq("lengths are equal"))
-  end
+  # it('should return a phrase if the length of the words are equal') do
+  #     anagram7 = Anagram.new("word1$", "This3#@")
+  #   expect(anagram7.find_anagram()).to(eq("lengths are equal"))
+  # end
 
   it('should return a phrase if the length of the words are not equal') do
       anagram8 = Anagram.new("word!", "words*")
-    expect(anagram8.find_anagram()).to(eq("not equal"))
+    expect(anagram8.find_anagram()).to(eq("length of words is not equal, therefore not anagrams!"))
+  end
+
+  it('should return an array matching letters from both words') do
+      anagram9 = Anagram.new("words!", "sword#4")
+    expect(anagram9.find_anagram()).to(eq(["d", "o", "r", "s", "w"]))
   end
 
 

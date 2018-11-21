@@ -27,18 +27,35 @@ class Anagram
   end
 
   def find_anagram
+    empty = []
     sorted1 = remove_special_chars(@word1)
     sorted2 = remove_special_chars(@word2)
     vowel_check1 = check_vowel(sorted1)
     vowel_check2 = check_vowel(sorted2)
+    sorted1_array = sorted1.split('')
+    sorted2_array = sorted2.split('')
 
     if vowel_check1 == false || vowel_check2 == false
       return "Both words must contain a vowel"
     end
     if vowel_check1 == true || vowel_check2 == true
-      if sorted1.split('').length == sorted2.split('').length
-        return "lengths are equal"
-      else return "not equal"
+      if sorted1_array.length == sorted2_array.length
+        array3 = sorted1_array & sorted2_array
+        return array3
+
+        # sorted1_array.each do |letter1|
+        #   sorted2_array.each do |letter2|
+        #     if (letter1 == letter2)
+        #       empty.push(letter1)
+        #       return empty
+        #     end
+        #   end
+        # end
+
+
+
+        # return "lengths are equal"
+      else return "length of words is not equal, therefore not anagrams!"
       end
     end
   end
