@@ -33,25 +33,34 @@ class Anagram
     vowel_check2 = check_vowel(sorted2)
 
     if vowel_check1 == false || vowel_check2 == false
-      return "Both words much contain a vowel"
-    else return sorted1.split('').length
+      return "Both words must contain a vowel"
     end
-
-  # elsif sorted1.split('').length != sorted2.split('').length
-  # return "words are different lengths"
-  # end
-
-    # if sorted1 and sorted1 are words then compare to see if strings are equal
-    #   if strings are equal, they are anagrams
-
+    if vowel_check1 == true || vowel_check2 == true
+      if sorted1.split('').length == sorted2.split('').length
+        return "lengths are equal"
+      else return "not equal"
+      end
+    end
   end
 
-  def length_word
-
-
   end
+#
+#   def length_word
+#
+#
+#   end
+#
+#   def output
+#     "words"
+#   end
+# end
 
-  def output
-    "words"
-  end
-end
+# else return sorted1.split('').length
+# end
+
+# elsif sorted1.split('').length != sorted2.split('').length
+# return "words are different lengths"
+# end
+
+# if sorted1 and sorted1 are words then compare to see if strings are equal
+#   if strings are equal, they are anagrams

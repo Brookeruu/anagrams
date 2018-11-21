@@ -26,23 +26,23 @@ describe('#anagrams') do
 
   it('should return a phrase if the either word do not contain a vowel') do
       anagram5 = Anagram.new("word1$", "wrrd2@")
-    expect(anagram5.find_anagram()).to(eq("Both words much contain a vowel"))
+    expect(anagram5.find_anagram()).to(eq("Both words must contain a vowel"))
   end
-
-  # it('should return a phrase if the either word do not contain a vowel') do
-  #     anagram6 = Anagram.new("word1$", "Thes3#e")
-  #   expect(anagram6.find_anagram()).to(eq("Now check letters"))
-  # end
 
   it('should return a phrase if the either word do not contain a vowel') do
-      anagram6 = Anagram.new("word1$", "Thes3#e")
-    expect(anagram6.find_anagram()).to(eq(4))
+      anagram6 = Anagram.new("word1$", "Thss3#")
+    expect(anagram6.find_anagram()).to(eq("Both words must contain a vowel"))
   end
 
-  # it('should return a phrase if the either word do not contain a vowel') do
-  #     anagram6 = Anagram.new("word1$", "words")
-  #   expect(anagram6.find_anagram()).to(eq("words are different lengths"))
-  # end
+  it('should return a phrase if the length of the words are equal') do
+      anagram7 = Anagram.new("word1$", "This3#@")
+    expect(anagram7.find_anagram()).to(eq("lengths are equal"))
+  end
+
+  it('should return a phrase if the length of the words are not equal') do
+      anagram8 = Anagram.new("word!", "words*")
+    expect(anagram8.find_anagram()).to(eq("not equal"))
+  end
 
 
 
